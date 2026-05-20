@@ -3,10 +3,6 @@
   <h3 align="center">Estudante</h3>
 </div>
 
-<div align="center">
-  <a href="https://youtube.com/@https://www.youtube.com/channel/UCO6rnzjkDCdZ8-2jx8qDPfQ" target="_blank"><img src="https://img.shields.io/badge/youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/></a>
-</div>
-
 ## 🙋‍♂️ Sobre Mim
 
 - 🗺️ Gosto de fazer mapas no Hammer Editor da Valve para jogos da Source Engine
