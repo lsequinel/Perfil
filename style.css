@@ -1,4 +1,3 @@
-/* Reset básico para limpar as margens padrão do navegador */
 * {
     margin: 0;
     padding: 0;
@@ -7,39 +6,79 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a; /* Azul escuro predominante (fundo) */
-    color: #f1f5f9; /* Texto claro para dar contraste */
-    line-height: 1.6;
-    transition: background-color 0.5s ease; /* Mantém a transição suave do script */
+    /* Fundo inicial: Verde com fade (degradê) para o preto */
+    background: linear-gradient(180deg, #15803d 0%, #000000 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+    transition: background 1s ease; /* Transição suave quando o fundo mudar */
 }
 
-header {
-    background-color: #1e293b; /* Azul um pouco mais claro que o fundo para destacar */
-    color: #38bdf8; /* Azul brilhante para o título principal */
-    text-align: center;
-    padding: 2.5rem 1rem;
-    border-bottom: 1px solid #334155;
-}
-
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-}
-
-header p {
-    color: #94a3b8; /* Texto secundário levemente acinzentado */
+/* Nova classe que o JS vai aplicar quando chegar a 3000 */
+body.limite-atingido {
+    /* Fundo muda para Azul com fade para o preto */
+    background: linear-gradient(180deg, #1d4ed8 0%, #000000 100%);
 }
 
 .container {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+    text-align: center;
+    padding: 2rem;
 }
 
-.card {
-    background: #1e293b; /* Fundo do card combinando com o header */
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    border:
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: color 0.5s ease;
+}
+
+/* Estilo do título quando o limite for atingido */
+body.limite-atingido h1 {
+    color: #60a5fa; /* Azul brilhante para o texto final */
+    text-shadow: 0 0 25px rgba(96, 165, 250, 0.6);
+}
+
+.contador-box {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.subtexto {
+    font-size: 1.5rem;
+    color: #a1a1aa;
+}
+
+button {
+    background-color: #22c55e; /* Botão verde inicial */
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #16a34a;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Estilo do botão após atingir o limite */
+body.limite-atingido button {
+    background-color: #2563eb; /* Botão fica azul */
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    cursor: not-allowed; /* Avisa que não dá mais para clicar */
+    opacity: 0.7;
+}
