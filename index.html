@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
+    <title>Farmador de Aura 3000</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Bem-vindo ao Meu Site</h1>
-        <p>Criado com HTML, CSS e JavaScript</p>
-    </header>
+    <div class="container">
+        <h1 id="titulo">Farmador de Aura 3000</h1>
+        
+        <div class="contador-box">
+            <span id="contador">0</span> <span class="subtexto">de Aura</span>
+        </div>
 
-    <main class="container">
-        <section class="card">
-            <h2>Interatividade Interessante</h2>
-            <p>O JavaScript permite que você adicione funções dinâmicas à sua página. Clique no botão abaixo para ver a mágica acontecer!</p>
-            <button id="botao-cor">Mudar Cor de Fundo</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Desenvolvido com ❤️</p>
-    </footer>
+        <button id="btn-farmar">Farmar</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
