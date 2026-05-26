@@ -1,19 +1,28 @@
-// Seleciona o botão e o corpo (body) da página
-const botao = document.getElementById('botao-cor');
+// Selecionando os elementos do HTML
+const btnFarmar = document.getElementById('btn-farmar');
+const contadorElemento = document.getElementById('contador');
+const tituloElemento = document.getElementById('titulo');
 const corpoDaPagina = document.body;
 
-// Função para gerar uma cor hexadecimal aleatória
-function gerarCorAleatoria() {
-    const letras = '0123456789ABCDEF';
-    let cor = '#';
-    for (let i = 0; i < 6; i++) {
-        cor += letras[Math.floor(Math.random() * 16)];
-    }
-    return cor;
-}
+let aura = 0;
+const limite = 3000;
 
-// Adiciona um evento de clique ao botão
-botao.addEventListener('click', () => {
-    const novaCor = gerarCorAleatoria();
-    corpoDaPagina.style.backgroundColor = novaCor;
+btnFarmar.addEventListener('click', () => {
+    // Só adiciona se ainda não chegou no limite
+    if (aura < limite) {
+        aura++;
+        contadorElemento.textContent = aura;
+
+        // Se acabou de chegar no limite de 3000
+        if (aura === limite) {
+            // Adiciona a classe que muda o fundo e estilos para azul no CSS
+            corpoDaPagina.classList.add('limite-atingido');
+            
+            // Muda o texto do título principal
+            tituloElemento.textContent = "Você farmou infinita aura";
+            
+            // Desabilita o botão para o usuário ver que acabou o farm
+            btnFarmar.textContent = "Max Aura";
+        }
+    }
 });
